@@ -1,0 +1,29 @@
+<div
+  class="d-flex flex-column gap-3 p-3 border mb-5 border-secondary rounded project"
+>
+  <a [routerLink]="['/projects', +project.id]">
+    <img
+      src="/project-placeholder.png"
+      alt="project-cover"
+      class="img-fluid project-img rounded"
+    />
+  </a>
+  <h2 [title]="project.title" class="fs-3 fw-bold text-primary">
+    {{ project.title }}
+  </h2>
+  <p [title]="project.description" class="text-white description-truncate">
+    {{ project.description }}
+  </p>
+  <a
+    href="https://github.com"
+    target="_blank"
+    class="text-white btn btn-primary w-fit text-decoration-none fs-5"
+    >Repository</a
+  >
+  <a
+    href="https://github.com"
+    target="_blank"
+    class="w-fit text-decoration-none btn btn-primary text-white fs-5"
+    >Live Preview</a
+  >
+</div>

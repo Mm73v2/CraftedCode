@@ -1,0 +1,14 @@
+.skill-item {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 0, 150, 0.3),
+    rgba(0, 204, 255, 0.3)
+  );
+  transition: all 0.3s;
+}
+.skill-item:hover {
+  transform: translateY(-5px);
+}
+.skill-item-title {
+  color: rgb(110, 5, 5);
+}

@@ -1,0 +1,95 @@
+<div
+  class="contact vh-100 d-flex justify-content-center align-items-center px-3"
+>
+  <div class="bg-white rounded p-3 contact-form">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label
+          for="name"
+          class="form-label text-black fw-bold fs-5 contact-label"
+          >Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="John Doe"
+          formControlName="name"
+          [class.is-invalid]="name?.invalid && (name?.touched || name?.dirty)"
+          [class.is-valid]="name?.valid && (name?.touched || name?.dirty)"
+        />
+        <div
+          *ngIf="name?.invalid && (name?.touched || name?.dirty)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="name?.errors?.['required']">Name is required.</div>
+          <div *ngIf="name?.errors?.['minlength']">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label
+          for="email"
+          class="form-label text-black fw-bold fs-5 contact-label"
+          >Email address</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="name@example.com"
+          formControlName="email"
+          [class.is-invalid]="
+            email?.invalid && (email?.touched || email?.dirty)
+          "
+          [class.is-valid]="email?.valid && (email?.touched || email?.dirty)"
+        />
+        <div
+          *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="email?.errors?.['required']">Email is required.</div>
+          <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label
+          for="message"
+          class="form-label text-black fw-bold fs-5 contact-label"
+          >Message</label
+        >
+        <textarea
+          class="form-control"
+          id="message"
+          rows="3"
+          formControlName="message"
+          [class.is-invalid]="
+            message?.invalid && (message?.touched || message?.dirty)
+          "
+          [class.is-valid]="
+            message?.valid && (message?.touched || message?.dirty)
+          "
+        ></textarea>
+        <div
+          *ngIf="message?.invalid && (message?.touched || message?.dirty)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="message?.errors?.['required']">Message is required.</div>
+          <div *ngIf="message?.errors?.['minlength']">
+            Message must be at least 10 characters long.
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary text-white d-flex justify-content-center mx-auto w-50"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

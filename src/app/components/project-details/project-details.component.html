@@ -1,0 +1,59 @@
+<main
+  class="pt-5 pb-3 vh-md-100 d-flex justify-content-center align-items-center"
+>
+  <div class="container">
+    <div
+      *ngIf="loading"
+      class="d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <div *ngIf="!loading" class="d-flex flex-column gap-3">
+      <div class="row">
+        <div
+          class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-4"
+        >
+          <img
+            class="img-fluid rounded"
+            src="/project-placeholder.png"
+            alt="project"
+          />
+        </div>
+        <div
+          class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-4"
+        >
+          <img
+            class="img-fluid rounded"
+            src="/project-placeholder.png"
+            alt="project"
+          />
+        </div>
+        <div
+          class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mb-4"
+        >
+          <img
+            class="img-fluid rounded"
+            src="/project-placeholder.png"
+            alt="project"
+          />
+        </div>
+      </div>
+
+      <h2 class="fw-bold text-center">{{ project.title }}</h2>
+      <h3 class="fw-semibold text-primary fs-6">
+        {{ project.description }}
+      </h3>
+
+      <h4>
+        Repository Link:
+        <a href="https://www.github.com">{{ project.title }}</a>
+      </h4>
+      <h4>
+        Live Preview: <a href="https://www.github.com">{{ project.title }}</a>
+      </h4>
+    </div>
+  </div>
+</main>

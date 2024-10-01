@@ -1,0 +1,11 @@
+.contact {
+  background-image: url("/background-contact.webp");
+}
+
+.contact-form {
+  width: 500px;
+}
+
+.contact-label::first-letter {
+  color: #ec4067;
+}
